@@ -1,0 +1,421 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #2d5bff;
+  --secondary-color: #1a1a1a;
+  --accent-color: #00d9ff;
+  --background-dark: #1a1a1a;
+  --background-light: #f8f9fa;
+  --text-dark: #1e1e2c;
+  --text-light: #6c757d;
+  --white: #ffffff;
+  --transition: all 0.3s ease-in-out;
+  --card-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  --hover-transform: translateY(-5px);
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  color: var(--text-dark);
+  background-color: var(--background-dark);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1e40af;
+}
+
+/* Section Styles */
+.section-padding {
+  padding: 100px 0;
+}
+
+/* Text Styles */
+.text-primary-custom {
+  color: var(--primary-color) !important;
+  position: relative;
+  display: inline-block;
+}
+
+.text-primary-custom::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.text-primary-custom:hover::after {
+  transform: scaleX(1);
+}
+
+/* Button Styles */
+.btn {
+  transition: var(--transition);
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, var(--primary-color), #4d7fff);
+  border: none;
+  box-shadow: 0 4px 15px rgba(45, 91, 255, 0.2);
+}
+
+.btn-primary:hover {
+  transform: var(--hover-transform);
+  box-shadow: 0 8px 25px rgba(45, 91, 255, 0.3);
+}
+
+/* Card Styles */
+.card {
+  transition: var(--transition);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card:hover {
+  transform: var(--hover-transform);
+  box-shadow: 0 10px 30px rgba(45, 91, 255, 0.1);
+}
+
+/* Form Styles */
+.form-control {
+  border-radius: 10px;
+  padding: 0.8rem;
+  transition: var(--transition);
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: var(--white) !important;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 3px rgba(45, 91, 255, 0.2);
+  border-color: var(--primary-color) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Progress Bar Styles */
+.progress {
+  height: 10px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.progress-bar {
+  background: linear-gradient(45deg, var(--primary-color), #4d7fff);
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: progressShine 2s infinite;
+}
+
+/* Service Card Styles */
+.service-card {
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: var(--hover-transform);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-card:hover .icon-circle {
+  transform: scale(1.1);
+}
+
+/* Project Card Styles */
+.project-card img {
+  transition: var(--transition);
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+.project-card .hover-visible {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .hover-visible {
+  opacity: 1;
+}
+
+/* Social Links */
+.social-links a {
+  transition: var(--transition);
+  position: relative;
+}
+
+.social-links a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+  opacity: 0;
+  transform: scale(0);
+  transition: var(--transition);
+}
+
+.social-links a:hover::before {
+  opacity: 0.2;
+  transform: scale(1.5);
+}
+
+/* Animations */
+@keyframes progressShine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Badge Styles */
+.badge {
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 0.5rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.badge.bg-primary-custom {
+  background: linear-gradient(45deg, var(--primary-color), #4d7fff) !important;
+  box-shadow: 0 4px 15px rgba(45, 91, 255, 0.2);
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: var(--transition);
+}
+
+.hover-lift:hover {
+  transform: var(--hover-transform);
+}
+
+/* Glassmorphism */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Transitions */
+section {
+  position: relative;
+  z-index: 1;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(45, 91, 255, 0.1) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+section:hover::before {
+  opacity: 1;
+}
+
+/* General Styles */
+.bg-primary-custom {
+  background-color: var(--primary-color) !important;
+}
+
+/* Navbar Styles */
+.navbar {
+  transition: var(--transition);
+  padding: 1rem 0;
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+  position: relative;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: var(--transition);
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar-toggler {
+  border: none;
+  padding: 0;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* Button Styles */
+.btn-outline-light:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Section Backgrounds */
+.bg-light {
+  background-color: var(--background-light) !important;
+}
+
+/* Animation Classes */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition);
+}
+
+.fade-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero Section */
+#home {
+  background: linear-gradient(135deg, var(--background-light) 0%, #ffffff 100%);
+}
+
+/* Footer */
+footer {
+  background-color: var(--secondary-color);
+}
+
+/* Skill Cards */
+.skill-card {
+  transition: var(--transition);
+  border-radius: 15px;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(45, 91, 255, 0.1);
+}
+
+/* Custom Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
