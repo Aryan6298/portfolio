@@ -42,7 +42,7 @@ const Hero = () => {
         ></div>
       </div>
 
-      <Container className="position-relative" style={{marginTop: '5rem'}}>
+      <Container className="position-relative" style={{marginTop: '5rem'  }}>
         <Row className="align-items-center">
           <Col lg={6} className="order-lg-3 order-2">
             <div data-aos="fade-right" data-aos-delay="200">
@@ -95,7 +95,7 @@ const Hero = () => {
               </div>
               <div className="social-links" data-aos="fade-up" data-aos-delay="800">
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/Aryan6298"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="me-4 text-white"
@@ -103,7 +103,7 @@ const Hero = () => {
                   <FontAwesomeIcon icon={faGithub} size="2x" />
                 </a>
                 <a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://www.linkedin.com/in/aryan-janghela-5b4817335/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white"

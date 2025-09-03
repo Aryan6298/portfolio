@@ -41,9 +41,9 @@ const Footer = () => {
           <Col md={4} className="text-center text-md-end">
             <div className="social-links">
               {[
-                { icon: faGithub, link: 'https://github.com/yourusername' },
-                { icon: faLinkedin, link: 'https://linkedin.com/in/yourusername' },
-                { icon: faTwitter, link: 'https://twitter.com/yourusername' }
+                { icon: faGithub, link: 'https://github.com/Aryan6298' },
+                { icon: faLinkedin, link: 'https://www.linkedin.com/in/aryan-janghela-5b4817335/' },
+              
               ].map((social, index) => (
                 <a
                   key={index}
