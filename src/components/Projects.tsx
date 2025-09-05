@@ -11,7 +11,7 @@ const Projects = () => {
       title: 'Responsive Frontend Website',
       description: 'A modern, fully responsive frontend website showcasing sleek UI design and animations.',
       image: projectgeocon,
-      tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
+      tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'React' ],
       live: 'https://www.geoconservices.com'
     },
     {

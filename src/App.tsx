@@ -35,7 +35,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename= "/portfolio">
       <div className="app" style={{ cursor: 'none' }}>
         <CustomCursor />
         <Navigation />
