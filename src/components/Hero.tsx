@@ -133,7 +133,9 @@ const Hero = () => {
                   className="img-fluid rounded-circle shadow-lg floating"
                   style={{ 
                     maxWidth: '400px',
-                    border: '4px solid rgba(255,255,255,0.1)'
+                    border: '4px solid rgba(255,255,255,0.1)',
+                      marginLeft: window.innerWidth < 669 ? '-10px' : '0px'  
+                    
                   }}
                 />
               </div>
